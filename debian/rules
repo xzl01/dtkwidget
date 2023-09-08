@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/default.mk
-export QT_SELECT = qt5
+export QT_SELECT = qt6
 
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
@@ -32,4 +32,4 @@ override_dh_auto_configure:
 #endif
 
 override_dh_makeshlibs:
-	dh_makeshlibs  -V "libdtkwidget5 (>= $(shell echo $(VERSION) | cut -d '.' -f 1,2))"
+	dh_makeshlibs  -V "libdtk6widget (>= $(shell echo $(VERSION) | cut -d '.' -f 1,2))"
